@@ -16,7 +16,6 @@ import nltk
 # nltk.download('stopwords')
 
 def read_article(data):
-
     article = data.split(". ")
     sentences = []
     for sentence in article:
@@ -92,7 +91,6 @@ def generate_summary(file_name, top_n=5):
     a = ". ".join(summarize_text)
     return a
 
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -145,7 +143,6 @@ def home():
         return render_template('about.html', error=array)
 
 
-
     result = ""
     for i in transcript:
         result += ' ' + i['text']
@@ -154,11 +151,7 @@ def home():
     summarized_text1.append(result)
     
     return render_template('about.html', data=summarized_text1)
-    
-
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
